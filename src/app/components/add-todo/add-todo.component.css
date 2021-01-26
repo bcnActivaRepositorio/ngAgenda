@@ -1,0 +1,6 @@
+
+@media query and  (min-width: 600){
+  .subtitle{
+    display: none;
+  }
+}

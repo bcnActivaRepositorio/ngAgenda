@@ -1,0 +1,26 @@
+<br>
+<section class="section">
+<div class="container">
+  <!--main Form-->
+<form  class="form level is-mobile" (ngSubmit) = "onSubmit()">
+  <!--right side-->
+  <div class="level-right">
+    <div class="level-item">
+      <p class="subtitle is-5 is-hidden-mobile">
+        {{ subtitle | uppercase}}
+      </p>
+    </div>
+    <div class="level-item">
+      <input type="text" name="title" [(ngModel)] = "title" placeholder="Type...">
+    </div>
+    <div class="level-item">
+      <!--Left side-->
+    <input class="level-left" type="submit" value="Submit" class="btn">
+    </div>
+  </div>
+
+
+</form>
+<!--End Main Form-->
+</div>
+</section>

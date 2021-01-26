@@ -1,0 +1,12 @@
+<br>
+<section class="section">
+<div class="container">
+  <pr-add-todo (addTodo) = "addTodo($event)"></pr-add-todo>
+  <pr-todo-item
+  *ngFor="let todo of todos"
+  [todo] = "todo"
+  (deleteTodo) = "deleteTodo($event)"
+  >
+  </pr-todo-item>
+</div>
+</section>
