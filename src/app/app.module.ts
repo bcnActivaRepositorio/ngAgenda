@@ -11,6 +11,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ToDosComponent } from './components/to-dos/to-dos.component';
 import { TodoItemComponent } from './components/todo-item/todo-item.component';
 import { AddTodoComponent } from './components/add-todo/add-todo.component';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AddTodoComponent } from './components/add-todo/add-todo.component';
     FooterComponent,
     ToDosComponent,
     TodoItemComponent,
-    AddTodoComponent
+    AddTodoComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +32,6 @@ import { AddTodoComponent } from './components/add-todo/add-todo.component';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  exports: [HeaderComponent, BodyComponent, FooterComponent, AddTodoComponent]
+  exports: [HeaderComponent, BodyComponent, FooterComponent, AddTodoComponent, AboutComponent]
 })
 export class AppModule { }
