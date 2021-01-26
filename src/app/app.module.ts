@@ -6,7 +6,6 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { BodyComponent } from './body/body.component';
 import { FooterComponent } from './footer/footer.component';
 import { ToDosComponent } from './components/to-dos/to-dos.component';
 import { TodoItemComponent } from './components/todo-item/todo-item.component';
@@ -17,7 +16,6 @@ import { AboutComponent } from './components/about/about.component';
   declarations: [
     AppComponent,
     HeaderComponent,
-    BodyComponent,
     FooterComponent,
     ToDosComponent,
     TodoItemComponent,
@@ -32,6 +30,6 @@ import { AboutComponent } from './components/about/about.component';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  exports: [HeaderComponent, BodyComponent, FooterComponent, AddTodoComponent, AboutComponent]
+  exports: [HeaderComponent, FooterComponent, AddTodoComponent, AboutComponent]
 })
 export class AppModule { }
