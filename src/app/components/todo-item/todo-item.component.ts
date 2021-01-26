@@ -9,6 +9,9 @@ import { TodoService } from '../../services/todo.service';
 })
 export class TodoItemComponent implements OnInit {
 
+  // git
+  myGit: string = 'https://github.com/bcnActivaRepositorio/ngAgenda';
+  allGit: string = 'https://github.com';
   @Input() todo: Todo | undefined;
   // delete
   @Output() deleteTodo: EventEmitter<Todo> = new EventEmitter();
