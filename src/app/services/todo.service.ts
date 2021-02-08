@@ -24,7 +24,7 @@ export class TodoService {
    return this.http.get<Todo []>(`${this.todosUrl}${this.todosLimit}`);
   }
 // dlete Todo
-deleteTodo(todo: Todo):Observable<Todo>{
+deleteTodo(todo: Todo): Observable<Todo>{
   const url = `${this.todosUrl}/${todo.id}`;
   return this.http.delete<Todo>(url, httpOptions);
 }

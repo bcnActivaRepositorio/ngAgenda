@@ -11,14 +11,15 @@
       </p>
     </div>
     <div class="level-item">
-      <input type="text" name="title" [(ngModel)] = "title" placeholder="Type...">
+      <input type="text" name="title" [(ngModel)] = "title" (keypress)="enterPress($event)"  placeholder="Type...">
     </div>
     <div class="level-item">
       <!--Left side-->
-    <input class="level-left" type="submit" value="Submit" class="btn">
+    <input class="level-left" type="submit" value="Submit"  class="btn">
     </div>
   </div>
-
+<!---->
+<!---->
 
 </form>
 <!--End Main Form-->

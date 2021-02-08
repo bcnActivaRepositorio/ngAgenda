@@ -8,6 +8,8 @@ import { Component, OnInit,EventEmitter, Output } from '@angular/core';
 export class AddTodoComponent implements OnInit {
   title: string = '';
   subtitle: string = 'something to add?'
+  // clear filed
+  addTask: string = '';
   // output event
   @Output() addTodo: EventEmitter<any> = new EventEmitter();
 
@@ -16,12 +18,26 @@ export class AddTodoComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit() {
+  onSubmit(): void {
     const todo = {
       title: this.title,
       completed: false
     }
 
     this.addTodo.emit(todo);
+    this.clearMe();
+  }
+  // enter key
+  enterPress(e: any): void{
+    (e.keyCode === 13) ? console.log('key press has worked') : console.log('key press  not worked');
+
+  }
+  // clear Field
+  clearMe(): void{
+    this.title = '';
+    console.log('cleaning fields');
   }
 }
+// clear fields
+// https://reactgo.com/angular-clear-input-field/
+
