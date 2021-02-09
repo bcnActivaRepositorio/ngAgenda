@@ -1,8 +1,10 @@
 <br>
+<link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" />
+
 <div class="container" [ngClass] = "setClasses()">
 
   <div class="card is-mobile">
-    <div class="card-content">
+    <div class="card-content hero is-info">
       <p class="  text-center is-size-5-desktop is-size-6-tablet ">
         <input (change) = 'onToggle(todo)' type="checkbox">
         {{ todo?.title }}
@@ -21,7 +23,11 @@
         </span>
       </p>
     </footer>
+    <!---->
+
+    <!---->
   </div>
 </div>
+
 
 

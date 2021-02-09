@@ -6,7 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./landing.component.css']
 })
 export class LandingComponent implements OnInit {
-
+  // link git
+  myGit: string = 'https://github.com/bcnActivaRepositorio/ngAgenda';
+// binding
+linkOne: string = 'diary';
+linkTwo: string = "contact"
   constructor() { }
 
   ngOnInit(): void {

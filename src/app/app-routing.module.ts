@@ -7,10 +7,10 @@ import { LandingComponent } from './components/landing/landing.component';
 
 
 const routes: Routes = [
-  {path: '', component: LandingComponent},
-  {path:'dietary', component: ToDosComponent},
+  {path: '',      component: LandingComponent},
+  {path:'diary',  component: ToDosComponent},
   {path:'footer', component: FooterComponent},
-  {path:'about', component: AboutComponent}
+  {path:'contact',component: AboutComponent}
 ];
 
 @NgModule({
