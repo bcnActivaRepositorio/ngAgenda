@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output, ElementRef } from '@angular/core';
 import { Todo } from 'src/app/models/todo';
 import { TodoService } from '../../services/todo.service';
 
@@ -15,18 +15,23 @@ export class TodoItemComponent implements OnInit {
   @Input() todo: Todo | undefined;
   // delete
   @Output() deleteTodo: EventEmitter<Todo> = new EventEmitter();
-  constructor(private todoService: TodoService) { }
+  constructor(private todoService: TodoService,
+              private elementRef: ElementRef) { }
 
   ngOnInit(): void {
   }
 
   // set dinamic classes
   setClasses() {
+    const myDom: HTMLElement = this.elementRef.nativeElement;
+    const myEle = myDom.querySelector('.card-foter-item');
+    console.log(myEle);
+
     let classes = {
       todo: true,
       'is-complete': this.todo?.completed
     }
-
+   // if (!myEle)
     return classes;
   }
 

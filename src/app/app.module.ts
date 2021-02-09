@@ -11,6 +11,7 @@ import { ToDosComponent } from './components/to-dos/to-dos.component';
 import { TodoItemComponent } from './components/todo-item/todo-item.component';
 import { AddTodoComponent } from './components/add-todo/add-todo.component';
 import { AboutComponent } from './components/about/about.component';
+import { LandingComponent } from './components/landing/landing.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AboutComponent } from './components/about/about.component';
     ToDosComponent,
     TodoItemComponent,
     AddTodoComponent,
-    AboutComponent
+    AboutComponent,
+    LandingComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +32,6 @@ import { AboutComponent } from './components/about/about.component';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  exports: [HeaderComponent, FooterComponent, AddTodoComponent, AboutComponent]
+  exports: [HeaderComponent, FooterComponent, AddTodoComponent, AboutComponent, LandingComponent]
 })
 export class AppModule { }

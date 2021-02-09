@@ -1,26 +1,26 @@
-<br>
-<section class="section">
-<div class="container">
+
+<section class="section ">
+<div class="container has-background-transparent">
   <!--main Form-->
-<form  class="form level is-mobile" (ngSubmit) = "onSubmit()">
+<form  class="form-level is-mobile" (ngSubmit) = "onSubmit()">
   <!--right side-->
-  <div class="level-right">
-    <div class="level-item">
-      <p class="subtitle is-5 is-hidden-mobile">
-        {{ subtitle | uppercase}}
-      </p>
+  <div class="field is-grouped is-mobile ">
+
+    <div class="control is-mobile">
+      <input type="text" name="title" [(ngModel)] = "title" (keypress)="enterPress($event)"  placeholder="Type a note...">
     </div>
-    <div class="level-item">
-      <input type="text" name="title" [(ngModel)] = "title" (keypress)="enterPress($event)"  placeholder="Type...">
-    </div>
-    <div class="level-item">
+    <div class=" is-mobile is-hidden-touch">
       <!--Left side-->
-    <input class="level-left" type="submit" value="Submit"  class="btn">
+    <input class="control" type="submit" value="Submit">
     </div>
   </div>
-<!---->
-<!---->
+    <div class=" is-mobile is-hidden-desktop">
+      <!--Left side-->
+    <input class="control" type="submit" value="Submit">
+    </div>
 
+<!--button side-->
+<!--end -->
 </form>
 <!--End Main Form-->
 </div>

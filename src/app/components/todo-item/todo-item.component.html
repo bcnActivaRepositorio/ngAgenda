@@ -1,12 +1,12 @@
 <br>
 <div class="container" [ngClass] = "setClasses()">
 
-  <div class="card">
+  <div class="card is-mobile">
     <div class="card-content">
-      <p class=" title text-center">
+      <p class="  text-center is-size-5-desktop is-size-6-tablet ">
         <input (change) = 'onToggle(todo)' type="checkbox">
         {{ todo?.title }}
-        <button class="del" (click) = "onDelete(todo)" >x</button>
+        <span class="del" (click) = "onDelete(todo)" ><i class="fas fa-trash-alt has-text-danger"></i></span>
       </p>
     </div>
     <footer class="card-footer">
