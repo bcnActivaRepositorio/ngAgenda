@@ -45,7 +45,7 @@
                                 </a>
                             </span>
                             <span class="navbar-item">
-                                <a class="button is-white is-outlined" target="_blank" href="https://www.w3schools.com/angular/">
+                                <a class="button is-white is-outlined" target="_blank" rel="noreferrer" routerLink="link3w">
                                     <span class="icon">
                                         <i class="fa fa-book"></i>
                                     </span>
@@ -53,7 +53,7 @@
                                 </a>
                             </span>
                             <span class="navbar-item">
-                                <a class="button is-white is-outlined" target="_blank" href="{{ myGit }}">
+                                <a class="button is-white is-outlined" target="_blank" rel="noreferrer" href="{{ myGit }}">
                                     <span class="icon">
                                         <i class="fab fa-github"></i>
                                     </span>
@@ -73,7 +73,7 @@
                             Your diary
                         </h1>
                         <h2 class="subtitle">
-                          A simple aplication made with Angular and Bulma. A diary. You alredy have some appointments and duties noted down.  How is that? Because they come from and API. Yep. not from an internal jSon but a pure and simple API. My bad though, you can create and delete only. Yeah, old dog me. They don't allow me to do more.
+                          A simple aplication made with Angular and Bulma.
                         </h2>
                         <div class="box is-hidden">
                             <div class="field is-grouped">
@@ -98,14 +98,15 @@
       <div class="hero-body">
         <div class="container has-text-centered">
           <h1 class="title">
-            Free Bulma Templates
+            A Bulma Template
           </h1>
           <h2 class="subtitle">
-            Based on the <a href="http://bulma.io">Bulma</a> CSS Framework
+            Based on the <a href='{{linkThree}}' target="_blank" rel="noreferrer">Bulma</a> CSS Framework and modify to fit Angular 11
           </h2>
-          <a class="github-button" href="https://github.com/BulmaTemplates/bulma-templates" data-size="large" aria-label="View BulmaTemplates/bulma-templates on GitHub">View on Github</a>
-          <a class="github-button" href="https://github.com/BulmaTemplates/bulma-templates" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star BulmaTemplates/bulma-templates on GitHub">Star</a>
-          <a class="github-button" href="https://github.com/BulmaTemplates/bulma-templates/fork" data-size="large" data-show-count="true" aria-label="Fork BulmaTemplates/bulma-templates on GitHub">Fork</a>
+          <h2 class="subtitle">
+            A diary. You alredy have some appointments and duties noted down.  How is that? Because they come from and API. Yep, not from an internal jSon but a pure and simple API. My bad though, you can create and delete only. Yeah, old dog me. They don't allow me to do more.
+          </h2>
+          <a class="github-button" href="{{linkFour}}" data-size="large" aria-label="View BulmaTemplates/bulma-templates on GitHub">View on Github</a>
         </div>
       </div>
     </section>
@@ -125,11 +126,15 @@
       <div class="container">
         <div class="content has-text-centered">
           <p>
-            <strong>Bulma Templates</strong> by <a href="https://github.com/dansup">Daniel Supernault</a> and <a href="https://github.com/BulmaTemplates/bulma-templates/graphs/contributors">many</a> contributors. The Source Code is licensed
-            <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
+            <span class="has-text-weight-bold">Bulma Templates</span> by <a href="{{ linkDan }}" target="_blank" rel="noreferrer">Daniel Supernault</a> and <a routerLink="linkMany" target="_blank" rel="noreferrer">many</a> contributors. The Source Code is licensed
+            <a href="{{ linkMit }}">MIT</a>.
           </p>
           <p>
-            <a class="icon" href="https://github.com/BulmaTemplates/bulma-templates">
+            <span class="has-text-weight-bold">Diary</span> &copy; <span>{{ myYear() }}</span> Made with <i class="fa fa-heart" style="color:red"></i> by
+             <a href="{{ linkMy }}" target="_blank" rel="noreferrer">theclick36</a>.
+          </p>
+          <p>
+            <a class="icon" href="{ {myGit }}" target="_blank" rel="noreferrer">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
                 <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z" /></svg>
             </a>
@@ -141,20 +146,7 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
 
     <!--sextion2-->
-    <script async type="text/javascript" src="../js/bulma.js"></script>
-    <script async >
-      // The following code is based off a toggle menu by @Bradcomp
-// source: https://gist.github.com/Bradcomp/a9ef2ef322a8e8017443b626208999c1
-(function() {
-    var burger = document.querySelector('.burger');
-    var menu = document.querySelector('#'+burger.dataset.target);
-    burger.addEventListener('click', function() {
-        burger.classList.toggle('is-active');
-        menu.classList.toggle('is-active');
-    });
-})();
 
-    </script>
 </body>
 
 </html>

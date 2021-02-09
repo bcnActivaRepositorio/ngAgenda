@@ -8,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 export class LandingComponent implements OnInit {
   // link git
   myGit: string = 'https://github.com/bcnActivaRepositorio/ngAgenda';
+
 // binding
-linkOne: string = 'diary';
-linkTwo: string = "contact"
+linkOne:   string = 'diary';
+linkTwo:   string = "contact";
+linkThree: string = 'http://bulma.io';
+linkFour : string ="https://github.com/BulmaTemplates/bulma-templates";
+linkDan:   string = "https://github.com/dansup";
+link3w:    string = "https://www.w3schools.com/angular";
+linkMany:  string = "https://github.com/BulmaTemplates/bulma-templates/graphs/contributors";
+linkMy:    string = "https://theclick36.com";
+linkMit:   string = "http://opensource.org/licenses/mit-license.php";
+
+
+// copyright year
+myYear: number | any = () =>new Date().getFullYear();
+
   constructor() { }
 
   ngOnInit(): void {
