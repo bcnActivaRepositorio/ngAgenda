@@ -2,3 +2,9 @@
   text-decoration: line-through;
 }
 
+@media query and  (min-width: 600){
+ footer .card-footer{
+    display: none;
+    padding: 0 !important;
+  }
+}

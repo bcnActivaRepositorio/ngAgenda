@@ -1,18 +1,20 @@
 @import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
 .hero {
- /* background: linear-gradient(0deg, #fff, 50%, #DEEEFE);*/
   font-family: 'Rubik', sans-serif;
-  /*background: #262626;*/
-  color: #627482 !important;
+  background: #262626;
+  color: #f6f9fc !important;
   height: 100 !important
 }
 h1{
 
 font-size: 3rem;
-color: #989c9e !important;
+color: #f7f7f7 !important;
 
 }
 h2{
   font-size: calc(14px + (40 - 34) * ((100vw - 360px) / (1600 - 360))) !important;
-  color: #a1bcd1 !important;
+  color: #f7f7f7 !important;
+}
+#barraMenu{
+  background-color: #3298dc !important;
 }

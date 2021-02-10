@@ -4,3 +4,10 @@
     display: none;
   }
 }
+#inputOne{
+  background-color: whitesmoke;
+}
+.boton{
+  border-color: whitesmoke;
+  background-color: #3298dc ;
+}
