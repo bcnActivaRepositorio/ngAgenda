@@ -9,7 +9,7 @@ export class FooterComponent implements OnInit {
 myName: string = 'robert garcia';
 myMail: string = 'theclick36@gmail.com';
 myWeb: string = 'https://theclick36.com';
-myApp: string = 'dietary';
+myApp: string = 'diary';
   constructor() { }
 
   ngOnInit(): void {

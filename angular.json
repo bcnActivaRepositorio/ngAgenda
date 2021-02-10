@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "dietary": {
+    "diary": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/dietary",
+            "outputPath": "dist/diary",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -72,18 +72,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "dietary:build"
+            "browserTarget": "diary:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "dietary:build:production"
+              "browserTarget": "diary:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "dietary:build"
+            "browserTarget": "diary:build"
           }
         },
         "test": {
@@ -120,16 +120,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "dietary:serve"
+            "devServerTarget": "diary:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "dietary:serve:production"
+              "devServerTarget": "diary:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "dietary"
+  "defaultProject": "diary"
 }
