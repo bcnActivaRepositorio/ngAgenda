@@ -43,7 +43,7 @@
         <i class="fas fa-exclamation-triangle"></i>
       </span>
     </div>
-    <div *ngIf="controlMe.myMail.touched && controlMe.myMail.invalid && controlMe.myMail.hasError('pattern')" class="is-danger">
+    <div *ngIf="controlMe.myMail.touched && controlMe.myMail.invalid"  class="is-danger">
       <div *ngIf="controlMe.myMail.errors?.required"><span class=" help is-danger">Email is required</span></div>
       <div *ngIf="controlMe.myMail.errors?.email"><p class="help is-danger">Please, enter a valid email address</p></div>
     </div>
