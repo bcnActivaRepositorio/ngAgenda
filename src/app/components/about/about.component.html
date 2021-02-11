@@ -1,17 +1,23 @@
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 <pr-header></pr-header>
 <div class="container">
+  <form [formGroup] = "userMails" class="mt-5 pt-5" (ngSubmit) ="submitMe()" ><!--We tight the group with the object-->
   <div class="field">
     <label class="label">Name</label>
     <div class="control">
-      <input class="input" type="text" placeholder="Text input">
+      <input  class="input" type="text" placeholder="John Wick"  formControlName="name">
     </div>
+    <div *ngIf="controlMe.name.touched && controlMe.name.invalid" class="is-danger">
+      <div *ngIf="controlMe.name.errors?.required"><span class=" help is-danger">Name is required</span></div>
+      <div *ngIf="controlMe.name.errors?.minlength"><p class="help is-danger">Name MUST be longer than 3 letters</p></div>
+    </div>
+
   </div>
 
   <div class="field">
-    <label class="label">Username</label>
+    <label class="label" >Username</label>
     <div class="control has-icons-left has-icons-right">
-      <input class="input is-success" type="text" placeholder="Text input" value="bulma">
+      <input class="input" formControlName="username" type="text" placeholder="@john wick" >
       <span class="icon  is-left">
         <i class="fa fa-user"></i>
       </span>
@@ -19,13 +25,17 @@
         <i class="fa fa-check"></i>
       </span>
     </div>
-    <p class="help is-success">This username is available</p>
+    <div *ngIf="controlMe.username.touched && controlMe.username.invalid" class="is-danger">
+      <div *ngIf="controlMe.username.errors?.required"><span class=" help is-danger">Username is required</span></div>
+      <div *ngIf="controlMe.username.errors?.minlength"><p class="help is-danger">Username MUST be at least 3 letters</p></div>
+    </div>
+    <!-- <p class="help">This username is available</p> -->
   </div>
 
   <div class="field">
-    <label class="label">Email</label>
+    <label class="label" >Email</label>
     <div class="control has-icons-left has-icons-right">
-      <input class="input is-danger" type="email" placeholder="Email input" value="hello@">
+      <input class="input is-danger" formControlName="myMail" type="text"  placeholder="hello@hello.com" value="hello@hello.com" >
       <span class="icon  is-left">
         <i class="fa fa-envelope"></i>
       </span>
@@ -33,20 +43,13 @@
         <i class="fas fa-exclamation-triangle"></i>
       </span>
     </div>
-    <p class="help is-danger">This email is invalid</p>
+    <div *ngIf="controlMe.myMail.touched && controlMe.myMail.invalid && controlMe.myMail.hasError('pattern')" class="is-danger">
+      <div *ngIf="controlMe.myMail.errors?.required"><span class=" help is-danger">Email is required</span></div>
+      <div *ngIf="controlMe.myMail.errors?.email"><p class="help is-danger">Please, enter a valid email address</p></div>
+    </div>
+    <!-- <p class="help is-danger">This email is invalid</p> -->
   </div>
 
-  <div class="field">
-    <label class="label">Subject</label>
-    <div class="control">
-      <div class="select">
-        <select>
-          <option>Select dropdown</option>
-          <option>With options</option>
-        </select>
-      </div>
-    </div>
-  </div>
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
   <div class="field">
     <label class="label">Message</label>
@@ -79,11 +82,12 @@
 
   <div class="field is-grouped">
     <div class="control">
-      <button class="button is-link">Submit</button>
+      <button class="button is-link" type="submit">Submit</button>
     </div>
     <div class="control">
       <button class="button is-link is-light">Cancel</button>
     </div>
   </div>
+  </form>
 </div>
 <pr-footer></pr-footer>
