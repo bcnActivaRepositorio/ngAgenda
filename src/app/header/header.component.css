@@ -1,9 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
-.hero {
-  font-family: 'Rubik', sans-serif;
-  background: #262626;
-  color: #f6f9fc !important;
-  height: 100 !important
+.header{
+  margin-bottom: 3rem;
 }
 h1{
 
@@ -17,4 +14,18 @@ h2{
 }
 #barraMenu{
   background-color: #3298dc !important;
+}
+@media only screen and (max-width: 600px){
+  .header{
+    margin-bottom: 5rem;
+  }
+}
+@media only screen and (max-width: 400px){
+  .header{
+    margin-bottom: 3.5rem;
+  }
+  #barraMenu{
+    padding: 0.5rem !important;
+    height: max-content;
+  }
 }

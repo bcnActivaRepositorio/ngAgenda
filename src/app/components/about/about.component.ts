@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'pr-about',
@@ -11,9 +12,9 @@ export class AboutComponent implements OnInit {
 
 
   title: string = "Mail Me";
+  submitted: boolean = false;
 
-
-constructor() {
+constructor( ) {
 
  }
  userMails = new FormGroup({
@@ -43,7 +44,13 @@ get controlMe() {
   ngOnInit(): void {
   }
   // see the data frm the form
-submitMe(): void{
-  console.log(this.userMails.value);
-}
+  submitMe(){
+    console.log(this.userMails.value);
+    this.submitted = true
+     if( this.userMails.invalid){
+      console.log('no submit works');
+      return;
+    }
+    alert('All fields completed');
+  }
 }

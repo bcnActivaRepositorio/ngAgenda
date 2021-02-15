@@ -1,0 +1,16 @@
+#mailForm{
+  margin-top: 10rem;
+
+}
+@media screen and (max-width: 600px) {
+  #mailForm {
+    margin-top: 9rem;
+  }
+
+}
+@media screen and (max-width: 400px) {
+  #mailForm {
+    margin-top: 8rem;
+  }
+
+}

@@ -1,32 +1,33 @@
-<br>
+
 <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" />
 
-<div class="container" [ngClass] = "setClasses()">
+<div class="" [ngClass] = "setClasses()">
 
-  <div class="card is-mobile">
-    <div class="card-content hero is-info">
-      <p class="  text-center is-size-5-desktop is-size-6-tablet ">
-        <input (change) = 'onToggle(todo)' type="checkbox" class="is-success">
-        {{ todo?.title }}
-        <button class="button is-danger  ml-4 is-hidden-touch">
-          <span class="del" (click) = "onDelete(todo)" >
-            <i class="fas fa-trash has-text-white"></i>
-
-          </span>
-        </button>
-      </p>
+  <div class="card">
+    <div class="card-content ">
+      <!--new layout-->
+      <div class="list-wrapper">
+        <ul class="list">
+          <li class="list-item">
+            <div class="list_input touched">
+              <label id="checkMe">
+              <input (change) = 'onToggle(todo)' type="checkbox" class="is-success">
+              <span class="checkmark"></span>
+            </label>
+            </div>
+            <div class="list_content">
+              <p> {{ todo?.title }}</p>
+            </div>
+            <div class="list_delete">
+              <span class="del touched" (click) = "onDelete(todo)" >
+                <i class="fas fa-trash has-text-dark"></i>
+              </span>
+            </div>
+          </li>
+        </ul>
     </div>
-    <footer class="card-footer">
-      <p class="card-footer-item is-hidden-touch">
-        <span>
-          View on <a href="{{ myGit }}" target="_blank" rel="noreferrer">GitHub</a>
-        </span>
-      </p>
-      <p class="card-footer-item is-hidden-touch">
-        <span>
-          Share on <a href="{{ allGit }}" rel="noreferrer">GitHub</a>
-        </span>
-      </p>
+    <!--end new layout-->
+    <footer class="card-footer is-hidden">
       <p class="card-footer-item is-hidden-desktop">
           <span class="del" (click) = "onDelete(todo)" >
             <i class="fas fa-trash has-text-danger"></i>
@@ -36,8 +37,8 @@
     <!---->
 
     <!---->
-  </div>
-</div>
+  </div><!--end card content-->
+</div><!--end card-->
 
 
 

@@ -1,11 +1,11 @@
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 <pr-header></pr-header>
 <div class="container">
-  <form [formGroup] = "userMails" class="mt-5 pt-5" (ngSubmit) ="submitMe()" ><!--We tight the group with the object-->
+  <form [formGroup] = "userMails" class="" id="mailForm" (ngSubmit) ="submitMe()"><!--We tight the group with the object-->
   <div class="field">
     <label class="label">Name</label>
     <div class="control">
-      <input  class="input" type="text" placeholder="John Wick"  formControlName="name">
+      <input  class="input" type="text" placeholder="John Wick"  formControlName="name"[ngClass]="{ 'is-invalid': submitted && controlMe.name.errors }">
     </div>
     <div *ngIf="controlMe.name.touched && controlMe.name.invalid" class="is-danger">
       <div *ngIf="controlMe.name.errors?.required"><span class=" help is-danger">Name is required</span></div>

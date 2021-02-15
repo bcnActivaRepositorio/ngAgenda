@@ -6,19 +6,24 @@
   <!--right side-->
   <div class="field is-grouped is-mobile ">
 
-    <div class="control is-mobile">
+    <div class="control">
       <input type="text" class="input is-mobile is-primary" id="inputOne" name="title" [(ngModel)] = "title" (keypress)="enterPress($event)"  placeholder="Type a note...">
+
     </div>
     <div class=" is-mobile is-hidden-touch">
       <!--Left side-->
     <input class="control boton" type="submit" id="inputTwo" value="Submit">
     </div>
   </div>
-  <small class="has-text-weight-semibold has-text-white">Type what must be done during the day</small>
+  <small class="has-text-weight-semibold has-text-dark is-hidden-touch">Type what must be done during your day</small>
+  <small class="has-text-weight-semibold has-text-dark is-hidden-desktop">Type your duties</small>
+  <!--Left side moblie-->
     <div class=" is-mobile is-hidden-desktop mt-3">
-      <!--Left side-->
     <input class="control boton" type="submit" value="Submit">
     </div>
+    <!-- <div class="fab is-mobile is-hidden-desktop">
+      +
+    </div> -->
 
 
 <!--button side-->
