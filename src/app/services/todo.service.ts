@@ -25,6 +25,7 @@ export class TodoService {
   }
 // dlete Todo
 deleteTodo(todo: Todo): Observable<Todo>{
+  (todo.id == undefined) ? todo.id = 201 : todo.id;
   const url = `${this.todosUrl}/${todo.id}`;
   return this.http.delete<Todo>(url, httpOptions);
 }
@@ -33,9 +34,7 @@ deleteTodo(todo: Todo): Observable<Todo>{
 addTodo(todo:Todo): Observable<Todo>{
   //psot
   console.log('check id');
-  (todo.id == undefined) ?  todo.id = 201 : todo.id++;
-
-  return this.http.post<Todo>(`${this.todosUrl}/${todo.id}`, todo, httpOptions);
+  return this.http.post<Todo>(`${this.todosUrl}`, todo, httpOptions);
 }
   // tooggle completed
   toggleCompleted(todo: Todo): Observable<any>{
