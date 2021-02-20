@@ -14,7 +14,7 @@ export class AboutComponent implements OnInit {
   title: string = "Mail Me";
   submitted: boolean = false;
 
-constructor( ) {
+constructor( private formBuilder: FormBuilder) {
 
  }
  userMails = new FormGroup({
@@ -32,8 +32,13 @@ constructor( ) {
     Validators.required,
     Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$"),
     Validators.email
+  ]),
+  myAgree: new FormControl('', [
+    Validators.required
   ])
 });
+
+// different way to checkbox
 
 // getter
 get controlMe() {
@@ -42,6 +47,8 @@ get controlMe() {
 }
 
   ngOnInit(): void {
+     this.submitMe();
+
   }
   // see the data frm the form
   submitMe(){
@@ -51,6 +58,11 @@ get controlMe() {
       console.log('no submit works');
       return;
     }
-    alert('All fields completed');
+    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.userMails.value, null, 4));
+  }
+  onReset(): void {
+    this.submitted = false;
+    this.userMails.reset();
+    this.submitMe();
   }
 }

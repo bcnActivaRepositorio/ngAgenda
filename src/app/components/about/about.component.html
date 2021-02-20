@@ -4,10 +4,16 @@
   <form [formGroup] = "userMails" class="" id="mailForm" (ngSubmit) ="submitMe()"><!--We tight the group with the object-->
   <div class="field">
     <label class="label">Name</label>
-    <div class="control">
+    <div class="control has-icons-left has-icons-right">
       <input  class="input" type="text" placeholder="John Wick"  formControlName="name"[ngClass]="{ 'is-invalid': submitted && controlMe.name.errors }">
+      <span class="icon  is-left">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="icon  is-right">
+        <i class="fa fa-check"></i>
+      </span>
     </div>
-    <div *ngIf="controlMe.name.touched && controlMe.name.invalid" class="is-danger">
+    <div *ngIf="(controlMe.name.touched || controlMe.name.dirty) && controlMe.name.invalid" class="is-danger">
       <div *ngIf="controlMe.name.errors?.required"><span class=" help is-danger">Name is required</span></div>
       <div *ngIf="controlMe.name.errors?.minlength"><p class="help is-danger">Name MUST be longer than 3 letters</p></div>
     </div>
@@ -19,7 +25,7 @@
     <div class="control has-icons-left has-icons-right">
       <input class="input" formControlName="username" type="text" placeholder="@john wick" >
       <span class="icon  is-left">
-        <i class="fa fa-user"></i>
+        <i class="fa fa-id-card"></i>
       </span>
       <span class="icon  is-right">
         <i class="fa fa-check"></i>
@@ -35,7 +41,7 @@
   <div class="field">
     <label class="label" >Email</label>
     <div class="control has-icons-left has-icons-right">
-      <input class="input is-danger" formControlName="myMail" type="text"  placeholder="hello@hello.com" value="hello@hello.com" >
+      <input class="input " formControlName="myMail" type="text"  placeholder="hello@hello.com" value="hello@hello.com" >
       <span class="icon  is-left">
         <i class="fa fa-envelope"></i>
       </span>
@@ -61,31 +67,24 @@
   <div class="field">
     <div class="control">
       <label class="checkbox">
-        <input type="checkbox">
-        I agree to the <a href="#">terms and conditions</a>
+        <input type="checkbox" formControlName="myAgree" class="form-check-input"
+        [ngClass]="{'is-invalid': submitted && controlMe.myAgree.errors?.required}">
+        I agree to the <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32016R0679&from=EN"
+        target="_blank" rel="noreferrer">terms and conditions</a>
       </label>
+    </div>
+    <div *ngIf=" (controlMe.myAgree.invalid || controlMe.myAgree.touched)" class="is-danger">
+      <div *ngIf="controlMe.myAgree.errors?.required && submitted"><span class=" help is-danger">Agreement is required</span></div>
     </div>
   </div>
 
-  <div class="field">
-    <div class="control">
-      <label class="radio">
-        <input type="radio" name="question">
-        Yes
-      </label>
-      <label class="radio">
-        <input type="radio" name="question">
-        No
-      </label>
-    </div>
-  </div>
 
   <div class="field is-grouped">
-    <div class="control">
-      <button class="button is-link" type="submit">Submit</button>
+    <div class="control" >
+      <button class="button is-link" [disabled]="userMails.invalid" type="submit">Submit</button>
     </div>
     <div class="control">
-      <button class="button is-link is-light">Cancel</button>
+      <button class="button is-link is-light" type="reset" (click)="onReset()">Reset</button>
     </div>
   </div>
   </form>
