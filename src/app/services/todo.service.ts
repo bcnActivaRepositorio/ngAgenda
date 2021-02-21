@@ -41,6 +41,7 @@ deleteTodoById(id: number): Observable<Todo>{
 // add Todo
 addTodo(todo:Todo): Observable<Todo>{
   //psot
+  var $: any;
   console.log(todo.id);
  $.getJSON(this.todosUrl, (data: any) =>{
  console.log(data.length);
