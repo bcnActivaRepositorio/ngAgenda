@@ -1,3 +1,8 @@
+<<<<<<< HEAD
 <IfModule mod_headers.c>
    Header set Access-Control-Allow-Origin "*"
+=======
+<IfModule mod_headers.c>
+   Header set Access-Control-Allow-Origin "*"
+>>>>>>> d973f53079b89d7c4dc0fdb7a0af56dae2fde0f2
  </IfModule>
