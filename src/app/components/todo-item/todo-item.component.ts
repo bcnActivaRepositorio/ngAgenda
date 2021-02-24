@@ -24,12 +24,10 @@ export class TodoItemComponent implements OnInit {
   // set dinamic classes
   setClasses(): any  {
     const myDom: HTMLElement = this.elementRef.nativeElement;
-    const myEle = myDom.querySelector('.card-footer-item');
     let classes: any = {
       todo: true,
       'is-complete': this.todo?.completed
     }
-     if (!myEle)
     return classes;
   }
 
