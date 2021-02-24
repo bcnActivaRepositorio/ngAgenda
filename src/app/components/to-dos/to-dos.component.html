@@ -6,6 +6,7 @@
   *ngFor="let todo of todos"
   [todo] = "todo"
   (deleteTodo) = "deleteTodo($event)"
+  (click)="onSelect(todo)"
   >
   </pr-todo-item>
 </div>

@@ -10,6 +10,7 @@ import {  Todo } from '../../models/todo';
 export class ToDosComponent implements OnInit {
  //to do
  todos: Todo [] = [];
+ selectedTodo?: Todo;
 
   constructor(private todoService: TodoService) { }
 
@@ -19,7 +20,7 @@ export class ToDosComponent implements OnInit {
     });
   }
 
-  deleteTodo(todo: Todo){
+  deleteTodo(todo: Todo): void{
     console.log('delete me works');
     // ui
     this.todos = this.todos.filter(t => t.id !== todo.id);
@@ -27,10 +28,14 @@ export class ToDosComponent implements OnInit {
     this.todoService.deleteTodo(todo).subscribe();
   }
 
-  addTodo(todo: Todo){
+  addTodo(todo: Todo): void{
     //ui
     this.todoService.addTodo(todo).subscribe((todo: Todo) =>{
       this.todos.push(todo);
-    })
+    });
+  }
+  onSelect(todo: Todo): void {
+    this.selectedTodo = todo;
+    console.log(this.selectedTodo);
   }
 }

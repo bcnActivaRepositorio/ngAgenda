@@ -8,6 +8,7 @@ import { Component, OnInit,EventEmitter, Output } from '@angular/core';
 export class AddTodoComponent implements OnInit {
   title: string = '';
   subtitle: string = 'something to add?'
+  id: number = 0;
   // clear filed
   addTask: string = '';
   // output event
@@ -20,6 +21,7 @@ export class AddTodoComponent implements OnInit {
 
   onSubmit(): void {
     const todo = {
+      id: this.id,
       title: this.title,
       completed: false
     }

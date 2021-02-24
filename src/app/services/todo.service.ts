@@ -18,7 +18,7 @@ export class TodoService {
   todosUrl: string = 'https://jsonplaceholder.typicode.com/todos';
   todosLimit: string = '?_limit=6';
   lastId: number = 0;
-  todos?: Todo [];
+  todos: Todo [] = [];
 
   constructor(private http:HttpClient) { }
 
@@ -34,21 +34,16 @@ deleteTodo(todo: Todo): Observable<Todo>{
 }
 deleteTodoById(id: number): Observable<Todo>{
   this.todos = this.todos?.filter(todo => todo.id !== id);
-  const url = `${this.todosUrl}/${id}`;
-  return this.http.delete<Todo>(url, httpOptions)
+  const url = `${this.todosUrl}/:${id}`;
+  return this.http.delete<Todo>(url, httpOptions);
 }
 
 // add Todo
 addTodo(todo:Todo): Observable<Todo>{
-  //psot
-  var $: any;
+ //
   console.log(todo.id);
- $.getJSON(this.todosUrl, (data: any) =>{
- console.log(data.length);
-  if(!todo.id || todo.id == undefined) todo.id = ++data.length;
-  console.log(todo.id);
-
- });
+  console.log(JSON.stringify(todo));
+  console.log(Todo);
   return this.http.post<Todo>(`${this.todosUrl}`, todo, httpOptions);
 }
   // tooggle completed
