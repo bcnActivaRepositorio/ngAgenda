@@ -3,8 +3,8 @@
    Header set Access-Control-Allow-Origin "https://my-json-server.typicode.com/bcnactivarepositorio/ngAgenda/todos"
 =======
 <IfModule mod_headers.c>
-   Header set Access-Control-Allow-Origin "http://jsonplaceholder.typicode.com/todos"
+   Header set Access-Control-Allow-Origin "https://jsonplaceholder.typicode.com/todos"
 ============
-Header add Access-Control-Allow-Origin "http://jsonplaceholder.typicode.com/todos"
+Header add Access-Control-Allow-Origin "https://my-json-server.typicode.com/bcnactivarepositorio/ngAgenda/todos"
 Header add Access-Control-Allow-Methods "GET,PUT,POST,DELETE"
 Header add Access-Control-Allow-Headers "Content-Type, Authorization"
