@@ -15,7 +15,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class TodoService {
-  todosUrl: string = 'https://jsonplaceholder.typicode.com/todos';
+  todosUrl: string = 'https://my-json-server.typicode.com/bcnactivarepositorio/ngAgenda';
   todosLimit: string = '?_limit=6';
   lastId: number = 0;
   todos: Todo [] = [];
