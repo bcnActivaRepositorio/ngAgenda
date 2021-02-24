@@ -13,11 +13,11 @@ export class LandingComponent implements OnInit {
 linkOne:   string = 'diary';
 linkTwo:   string = "contact";
 linkThree: string = 'http://bulma.io';
-linkFour : string ="https://github.com/BulmaTemplates/bulma-templates";
+linkFour : string = "https://github.com/BulmaTemplates/bulma-templates";
 linkDan:   string = "https://github.com/dansup";
 link3w:    string = "https://www.w3schools.com/angular";
 linkMany:  string = "https://github.com/BulmaTemplates/bulma-templates/graphs/contributors";
-linkMy:    string = "https://theclick36.com";
+linkMy:    string = "https://github.com/bcnActivaRepositorio";
 linkMit:   string = "http://opensource.org/licenses/mit-license.php";
 linkHelp:  string = "https://medium.com/tech-insights/how-to-deploy-angular-apps-to-github-pages-gh-pages-896c4e10f9b4";
 
