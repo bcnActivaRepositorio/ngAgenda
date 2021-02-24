@@ -15,7 +15,8 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class TodoService {
-  todosUrl: string = 'https://my-json-server.typicode.com/bcnactivarepositorio/ngAgenda/todos';
+  todosUrl: string = 'http://jsonplaceholder.typicode.com/todos';
+  // todosUrl: string = "https://my-json-server.typicode.com/bcnactivarepositorio/ngAgenda/todos";
   todosLimit: string = '?_limit=6';
   lastId: number = 0;
   todos: Todo [] = [];
@@ -43,6 +44,9 @@ addTodo(todo:Todo): Observable<Todo>{
  //
   console.log(todo.id);
   console.log(JSON.stringify(todo));
+  //(todo.id == 0) ? todo.id = ++this.lastId : todo.id;
+   // this.todos.push(todo);
+  console.log(this.todos);
   return this.http.post<Todo>(`${this.todosUrl}`, todo, httpOptions);
 }
   // tooggle completed
