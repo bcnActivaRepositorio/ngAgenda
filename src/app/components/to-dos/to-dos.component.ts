@@ -11,6 +11,8 @@ export class ToDosComponent implements OnInit {
  //to do
  todos: Todo [] = [];
  selectedTodo?: Todo;
+ myArr: any[] = [];
+ lastId: number = 0;
 
   constructor(private todoService: TodoService) { }
 
@@ -31,11 +33,14 @@ export class ToDosComponent implements OnInit {
   addTodo(todo: Todo): void{
     //ui
     this.todoService.addTodo(todo).subscribe((todo: Todo) =>{
+      // fake api
       this.todos.push(todo);
+
     });
   }
   onSelect(todo: Todo): void {
     this.selectedTodo = todo;
     console.log(this.selectedTodo);
+    this.todoService.updateTodo(todo);
   }
 }
