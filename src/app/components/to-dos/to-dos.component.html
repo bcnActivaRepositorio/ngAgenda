@@ -5,7 +5,7 @@
   <pr-todo-item
   *ngFor="let todo of todos"
   [todo] = "todo"
-  (deleteTodo) = "deleteTodo($event)"
+  (deleteTodo) = "deleteTodoById($event)"
   (click)="onSelect(todo)"
   >
   </pr-todo-item>

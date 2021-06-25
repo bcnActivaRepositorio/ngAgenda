@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { ToastrModule } from 'ngx-toastr';
+import { AuthModule } from '@auth0/auth0-angular';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -12,7 +15,7 @@ import { TodoItemComponent } from './components/todo-item/todo-item.component';
 import { AddTodoComponent } from './components/add-todo/add-todo.component';
 import { AboutComponent } from './components/about/about.component';
 import { LandingComponent } from './components/landing/landing.component';
-import { ToastrModule } from 'ngx-toastr';
+
 
 @NgModule({
   declarations: [
@@ -30,6 +33,11 @@ import { ToastrModule } from 'ngx-toastr';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    // authentication auth0
+    AuthModule.forRoot({
+      domain: 'theclick36.eu.auth0.com',
+      clientId: 'UulQK5Zj50mb3Q07a1fTyY22kiMhIoCA'
+    }),
     AppRoutingModule,
     ToastrModule
   ],

@@ -43,4 +43,12 @@ export class ToDosComponent implements OnInit {
     console.log(this.selectedTodo);
     this.todoService.updateTodo(todo);
   }
+  deleteTodoById(num : number): void {
+    this.todoService.deleteTodoById(num).subscribe((res) => {
+      console.log(res);
+    }, (err) => {
+      console.log(err);
+    })
+
+  }
 }

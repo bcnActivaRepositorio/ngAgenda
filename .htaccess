@@ -8,3 +8,4 @@
 Header add Access-Control-Allow-Origin "https://my-json-server.typicode.com/bcnactivarepositorio/ngAgenda/todos"
 Header add Access-Control-Allow-Methods "GET,PUT,POST,DELETE"
 Header add Access-Control-Allow-Headers "Content-Type, Authorization"
+
