@@ -24,8 +24,8 @@ export class ToDosComponent implements OnInit {
 
   deleteTodo(todo: Todo): void{
     console.log('delete me works');
-    // ui
-    this.todos = this.todos.filter(t => t.id !== todo.id);
+    // now deletes only the selected fake api one 
+   this.todos = this.todos.filter((t) => t.id !== todo.id);
     // back
     this.todoService.deleteTodo(todo).subscribe();
   }
@@ -34,8 +34,8 @@ export class ToDosComponent implements OnInit {
     //ui
     this.todoService.addTodo(todo).subscribe((todo: Todo) =>{
       // fake api
+      todo.id = this.todos.length + 1;
       this.todos.push(todo);
-
     });
   }
   onSelect(todo: Todo): void {
@@ -43,12 +43,5 @@ export class ToDosComponent implements OnInit {
     console.log(this.selectedTodo);
     this.todoService.updateTodo(todo);
   }
-  deleteTodoById(num : number): void {
-    this.todoService.deleteTodoById(num).subscribe((res) => {
-      console.log(res);
-    }, (err) => {
-      console.log(err);
-    })
 
-  }
 }

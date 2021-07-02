@@ -18,7 +18,7 @@ const httpOptions = {
 export class TodoService {
   //todosUrl: string = 'https://jsonplaceholder.typicode.com/todos';
   todosUrl: string = "https://my-json-server.typicode.com/bcnactivarepositorio/ngAgenda/todos";
-  todosLimit: string = '?_limit=4';
+  todosLimit: string = '?_limit=5';
   lastId: number = 0;
   todos: Todo [] = [];
   public items: any = []; // doesn't work as we are working with http responses
@@ -46,25 +46,21 @@ export class TodoService {
     return cont;
     }
   }
+
   // update not yet
   updateTodo = async (todo: Todo) => {
     try {
       console.log('try and catch');
       const url = `${this.todosUrl}/${todo.id}`;
       this.http.put<Todo>(url, httpOptions);
-    } catch (error) {
-      console.log(error);
+    } catch (err: any) {
+      console.log(err);
     }
   }
 // dlete Todo
 deleteTodo(todo: Todo): Observable<Todo>{
 
   const url = `${this.todosUrl}/${todo.id}`;
-  return this.http.delete<Todo>(url, httpOptions);
-}
-deleteTodoById(id: number): Observable<Todo>{
-  this.todos = this.todos?.filter(todo => todo.id !== id);
-  const url = `${this.todosUrl}/:${id}`;
   return this.http.delete<Todo>(url, httpOptions);
 }
 
